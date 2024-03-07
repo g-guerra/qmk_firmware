@@ -13,11 +13,37 @@ enum custom_keycodes {
     VOL,
 };
 
+enum {
+	TD_1,
+	TD_2,
+	TD_3,
+	TD_4,
+	TD_5,
+	TD_6,
+	TD_7,
+	TD_8,
+	TD_9,
+	TD_10,
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+	[TD_1] = ACTION_TAP_DANCE_DOUBLE(KC_1,KC_F1),
+	[TD_2] = ACTION_TAP_DANCE_DOUBLE(KC_2,KC_F2),
+	[TD_3] = ACTION_TAP_DANCE_DOUBLE(KC_3,KC_F3),
+	[TD_4] = ACTION_TAP_DANCE_DOUBLE(KC_4,KC_F4),
+	[TD_5] = ACTION_TAP_DANCE_DOUBLE(KC_5,KC_F5),
+	[TD_6] = ACTION_TAP_DANCE_DOUBLE(KC_6,KC_F6),
+	[TD_7] = ACTION_TAP_DANCE_DOUBLE(KC_7,KC_F7),
+	[TD_8] = ACTION_TAP_DANCE_DOUBLE(KC_8,KC_F8),
+	[TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_9,KC_F9),
+	[TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_0,KC_F10),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_DEFAULT] = LAYOUT(
         // ┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-        KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSLS,
+        KC_GRV, TD(TD_1), TD(TD_2), TD(TD_3), TD(TD_4), TD(TD_5), TD(TD_6), TD(TD_7), TD(TD_8), TD(TD_9), TD(TD_10), KC_BSLS,
         // ├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO, KC_EQL, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS,
         // ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
